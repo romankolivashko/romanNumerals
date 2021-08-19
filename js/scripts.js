@@ -38,13 +38,19 @@
 
 
 function convertToRoman(num) {
+   //Create an empty string
   let roman = "";
+  //Create an array of possible RN up to 1000
   let romanNumeral = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+  //Create an array of possible number values
   let numbers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-
+  //Iterate for a length of our numbers array
   for (let i = 0; i < numbers.length; i++){
+     //While original number is larger than our unputed numbers array
      while (num >= numbers[i]) {
+        //Add its equivalent roman numeral to our original empty string
         roman = roman + romanNumeral[i];
+        //Substract the value from the original number to end while loop
         num = num - numbers[i];
       }
    }
@@ -52,4 +58,4 @@ function convertToRoman(num) {
 }
 
 convertToRoman(1000);
-console.log(convertToRoman(100));
+console.log(convertToRoman(100)); 
